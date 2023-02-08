@@ -3,7 +3,7 @@ import { preload } from "./preloader.js";
 // import { darkMode } from "./darkMode.js";
 import { toggleSidebar } from "./navbar.js";
 import { aboutUsCard } from "./aboutUs.js";
-import { professionsSection } from "./professions.js"
+import { professionsSection } from "./professions.js";
 
 window.addEventListener("load", preload);
 
@@ -11,8 +11,8 @@ window.addEventListener("load", preload);
 toggleSidebar();
 aboutUsCard();
 professionsSection();
-const footer = document.querySelector('footer');
-footer.innerHTML = `<p>&copy; Все права защищены Axror Kurban ${new Date().getFullYear()}</p>`
+const footer = document.querySelector("footer");
+footer.innerHTML = `<p>&copy; Все права защищены Axror Kurban ${new Date().getFullYear()}</p>`;
 
 // !SWIPER CAROUSEL
 var swiper = new Swiper(".mySwiper", {
@@ -49,7 +49,11 @@ porfessionsSec
   .to(".hill5", 3, { x: 300 }, "-=3")
   .to(".hill4", 3, { x: -300 }, "-=3")
   .to(".hill1", 3, { y: 400 }, "-=3")
-  .fromTo(".professions__articles", { opacity: 0 }, { opacity: 1, duration: 3 });
+  .fromTo(
+    ".professions__articles",
+    { opacity: 0 },
+    { opacity: 1, duration: 3 }
+  );
 
 let scene2 = new ScrollMagic.Scene({
   triggerElement: ".travel",
@@ -60,14 +64,14 @@ let scene2 = new ScrollMagic.Scene({
   .addTo(controller);
 
 websitesSec
-  .fromTo(".swiper", {  x: -300}, { x: 0, duration: 3 })
-  .fromTo(".websites-left", {  x: 300}, { x: 0, duration: 3 }, '-=3');
+  .fromTo(".swiper", { x: -300 }, { x: 0, duration: 3 })
+  .fromTo(".websites-left", { x: 300 }, { x: 0, duration: 3 }, "-=3");
 
-  let scene3 = new ScrollMagic.Scene({
-    triggerElement: ".websites",
-    duration: "100%",
-    triggerHook: 1,
-  })
-    .setTween(websitesSec)
-    .addTo(controller);
+let scene3 = new ScrollMagic.Scene({
+  triggerElement: ".websites",
+  duration: "100%",
+  triggerHook: 1,
+})
+  .setTween(websitesSec)
+  .addTo(controller);
 // !SCROLL MAGIC CODES END
